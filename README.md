@@ -1,9 +1,7 @@
-Skeleton Cookbook
+packagist Cookbook
 =================
 
-This is a testable skeleton cookbook designed for you or your organization to
-fork and modify appropriately. The cookbook comes with everything you need to
-develop infrastructure code with Chef and feel confident about it.
+This is a cookbook which combines everything to have a running packagist system.
 
 Requirements
 ------------
@@ -24,14 +22,14 @@ Attributes
 Recipes
 -------
 
-### skeleton::default
+### packagist::default
 
 *Explain what the recipe does here*
 
 Testing
 -------
 
-[![Build Status](https://travis-ci.org/mlafeldt/skeleton-cookbook.svg?branch=master)](https://travis-ci.org/mlafeldt/skeleton-cookbook)
+[![Build Status](https://travis-ci.org/sebbrandt87/packagist.svg?branch=master)](https://travis-ci.org/sebbrandt87/packagist)
 
 The cookbook provides the following Rake tasks for testing:
 
@@ -47,9 +45,9 @@ The cookbook provides the following Rake tasks for testing:
 License and Author
 ------------------
 
-Author:: YOUR_NAME (YOUR_EMAIL)
+Author:: Sebastian Brandt <sebbrandt87+git@gmail.com>
 
-Copyright:: YEAR, YOUR_NAME
+Copyright:: 2015, Sebastian Brandt
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

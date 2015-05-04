@@ -1,7 +1,27 @@
-name             "skeleton"
-maintainer       "YOUR NAME"
-maintainer_email "YOUR EMAIL"
-license          "Apache 2.0"
-description      "Installs/configures something"
-version          "0.1.0"
-recipe           "skeleton::default", "Installs/configures something"
+name              'packagist'
+maintainer        'Sebastian Brandt'
+maintainer_email  'sebbrandt87+git@gmail.com'
+license           'Apache 2.0'
+description       'Installs/configures a full usable packagist server.'
+version           '0.1.0'
+recipe            'packagist::default', 'Installs/configures the packagist server.'
+
+supports          'amazon'
+supports          'centos'
+supports          'debian'
+supports          'redhat'
+supports          'scientific'
+supports          'ubuntu'
+
+depends           'cron'
+depends           'git'
+depends           'subversion'
+depends           'php'
+depends           'mysql', '~> 5.0.0'
+depends           'php-fpm'
+depends           'composer'
+depends           'nginx'
+depends           'java'
+depends           'percona'
+depends           'solr'
+depends           'redisio'

@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: packagist
-# Recipe:: default
+# Recipe:: _install_nginx
 #
 # Copyright (C) Sebastian Brandt <sebbrandt87+git@gmail.com>
 #
@@ -17,7 +17,17 @@
 # limitations under the License.
 #
 
-# Install/configure something here
-include_recipe "#{cookbook_name}::_install_dependencies"
-include_recipe "#{cookbook_name}::_install_packagist"
-include_recipe "#{cookbook_name}::_install_nginx"
+chef_gem 'chef-rewind'
+require 'chef/rewind'
+
+# Install/configure nginx
+include_recipe 'nginx::default'
+
+rewind :template => "#{node['nginx']['dir']}/sites-available/default" do
+  source 'default-site.erb'
+  owner  'root'
+  group  node['root_group']
+  mode   '0644'
+  cookbook_name 'packagist'
+  notifies :reload, 'service[nginx]', :delayed
+end
